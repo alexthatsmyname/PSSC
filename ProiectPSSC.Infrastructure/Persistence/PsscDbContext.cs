@@ -11,6 +11,7 @@ public class PsscDbContext : DbContext
 
     public DbSet<Order> Orders => Set<Order>();
     public DbSet<OrderItem> OrderItems => Set<OrderItem>();
+    public DbSet<Invoice> Invoices => Set<Invoice>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -64,6 +65,26 @@ public class PsscDbContext : DbContext
                     .HasPrecision(18, 2)
                     .IsRequired();
             });
+        });
+
+        // Configure Invoice entity
+        modelBuilder.Entity<Invoice>(builder =>
+        {
+            builder.HasKey(i => i.Id);
+
+            builder.Property(i => i.OrderId)
+                .IsRequired();
+
+            builder.Property(i => i.TotalAmount)
+                .HasPrecision(18, 2)
+                .IsRequired();
+
+            builder.Property(i => i.IssuedAt)
+                .IsRequired();
+
+            builder.Property(i => i.Status)
+                .HasConversion<string>()
+                .IsRequired();
         });
     }
 }

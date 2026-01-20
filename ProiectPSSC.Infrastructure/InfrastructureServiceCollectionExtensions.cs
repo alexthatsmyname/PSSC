@@ -20,6 +20,7 @@ public static class InfrastructureServiceCollectionExtensions
             options.UseSqlServer(connectionString));
 
         services.AddScoped<IOrderRepository, OrderRepository>();
+        services.AddScoped<IInvoiceRepository, InvoiceRepository>();
 
         return services;
     }

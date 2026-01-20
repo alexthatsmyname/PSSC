@@ -18,8 +18,14 @@ builder.Services.AddScoped<CreateOrderOperation>();
 builder.Services.AddScoped<SetOrderStatusOperation>();
 builder.Services.AddScoped<PersistOrderOperation>();
 
+builder.Services.AddScoped<ValidateInvoiceGenerationOperation>();
+builder.Services.AddScoped<TransformOrderToInvoiceOperation>();
+builder.Services.AddScoped<PersistInvoiceOperation>();
+builder.Services.AddScoped<SetOrderInvoicedOperation>();
+
 // Register Domain Workflow
 builder.Services.AddScoped<PlaceOrderWorkflow>();
+builder.Services.AddScoped<GenerateInvoiceWorkflow>();
 
 // Register Infrastructure
 builder.Services.AddInfrastructure(builder.Configuration);
