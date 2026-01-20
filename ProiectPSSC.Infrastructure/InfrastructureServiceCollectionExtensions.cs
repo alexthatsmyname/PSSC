@@ -21,6 +21,12 @@ public static class InfrastructureServiceCollectionExtensions
 
         services.AddScoped<IOrderRepository, OrderRepository>();
         services.AddScoped<IInvoiceRepository, InvoiceRepository>();
+            services.AddScoped<IShipmentRepository, ShipmentRepository>();
+            services.AddScoped<ProjectPSSC.Domain.Operations.ValidateShipmentCreationOperation>();
+            services.AddScoped<ProjectPSSC.Domain.Operations.TransformOrderToShipmentOperation>();
+            services.AddScoped<ProjectPSSC.Domain.Operations.PersistShipmentOperation>();
+            services.AddScoped<ProjectPSSC.Domain.Operations.SetOrderShippedOperation>();
+            services.AddScoped<ProjectPSSC.Domain.Workflows.CreateShipmentWorkflow>();
 
         return services;
     }

@@ -12,6 +12,7 @@ public class PsscDbContext : DbContext
     public DbSet<Order> Orders => Set<Order>();
     public DbSet<OrderItem> OrderItems => Set<OrderItem>();
     public DbSet<Invoice> Invoices => Set<Invoice>();
+        public DbSet<Shipment> Shipments => Set<Shipment>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
