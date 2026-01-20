@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(tree:*)",
+      "Bash(dotnet build:*)",
+      "Bash(dotnet run)",
+      "Bash(timeout /t 5 /nobreak)",
+      "Bash(curl:*)"
+    ]
+  }
+}
