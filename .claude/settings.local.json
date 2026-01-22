@@ -5,7 +5,18 @@
       "Bash(dotnet build:*)",
       "Bash(dotnet run)",
       "Bash(timeout /t 5 /nobreak)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(powershell -Command \"Get-Service | Where-Object {$_Name -like ''*SQL*''} | Format-Table Name, Status\")",
+      "Bash(dotnet add package:*)",
+      "Bash(dotnet add:*)",
+      "Bash(dotnet add reference:*)",
+      "Bash(dotnet new:*)",
+      "Bash(dotnet sln add:*)",
+      "Bash(sqlcmd:*)",
+      "Bash(taskkill:*)",
+      "Bash(powershell:*)",
+      "Bash(timeout /t 8 /nobreak)",
+      "Bash(netstat:*)"
     ]
   }
 }
